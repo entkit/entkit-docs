@@ -4,24 +4,16 @@ sidebar_position: 1
 
 # Tutorial Intro
 
-Let's discover **Docusaurus in less than 5 minutes**.
+Let's discover **entkit in less than 5 minutes**.
 
-## Getting Started
+## What is **entkit**
 
-Get started by **creating a new site**.
+Bundle of tools to generate backend and frontend together by your business definition
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## How to start
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 16.14 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
+1. Generate resources on your **ent** setup
+2. Create new setup 
 
 ```bash
 npm init docusaurus@latest my-website classic
