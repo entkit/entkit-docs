@@ -10,30 +10,9 @@ Let's discover **entkit in less than 5 minutes**.
 
 Bundle of tools to generate backend and frontend together by your business definition
 
-## How to start
+## How to set up
 
-1. Generate resources on your **ent** setup
-2. Create new setup 
+Setup options 
+1. Setup new **ent** project by **entkit** template
+2. Configure your already setuped **ent** project
 
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
