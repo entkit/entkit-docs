@@ -1,6 +1,7 @@
 {
   "label": "Extension Options",
-  "position": 1,
+  "position": 2,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "entkit extension options"
