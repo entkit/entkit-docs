@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# With UIs
+# With Generator
 
 This annotation aims to delineate supplementary UI generators
 
@@ -18,11 +18,8 @@ Currently, there are only two available UI adapters to choose from.
 ```go title="entc.go"
 entkit, err := entkit.NewExtension(
 	...
-    entkit.WithUIs(
-        entkit.NewUI(filepath.Join("..", "refine-project"), entkit.RefineAdapter),
-        entkit.NewUI(filepath.Join("..", "typescript-project"), entkit.TypescriptAdapter),
-        ...
-    ),
-	...
+    entkit.WithGenerator(filepath.Join("..", "my-frontend"), entkit.RefineAdapter),
+    entkit.WithGenerator(filepath.Join("..", "type-definitions"), entkit.TypescriptAdapter),
+    ...
 )
 ```

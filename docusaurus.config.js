@@ -64,10 +64,11 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'Entkit',
+        // title: 'Entkit',
         logo: {
           alt: 'Entkit Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo-dark.svg',
         },
         items: [
           {
@@ -133,6 +134,11 @@ const config = {
         theme: require('prism-react-renderer/themes/dracula'),
         darkTheme: darkCodeTheme,
         additionalLanguages: ['go', 'typescript', 'javascript'],
+      },
+      colorMode: {
+        defaultMode: 'dark',
+        disableSwitch: false,
+        respectPrefersColorScheme: false,
       },
     }),
 };
