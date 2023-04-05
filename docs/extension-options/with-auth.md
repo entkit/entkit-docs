@@ -36,20 +36,18 @@ entkit, err := entkit.NewExtension(
                     ClientID: gocloak.StringP("my-backend-client"),
                     Secret:   gocloak.StringP("my-backend-client-secret"),
                 },
-                []*gocloak.Client{
-                    {
-                        ClientID: gocloak.StringP("my-frontend-client"),
-                        RootURL:  gocloak.StringP("https://my-site.com"),
-                        RedirectURIs: &[]string{
-                            "https://my-site.com/*",
-                            "http://localhost:3000/*",
-                        },
-                        Attributes: &map[string]string{
-                            "post.logout.redirect.uris": "+",
-                        },
-                        WebOrigins: &[]string{
-                            "+",
-                        },
+                &gocloak.Client{
+                    ClientID: gocloak.StringP("my-frontend-client"),
+                    RootURL:  gocloak.StringP("https://my-site.com"),
+                    RedirectURIs: &[]string{
+                        "https://my-site.com/*",
+                        "http://localhost:3000/*",
+                    },
+                    Attributes: &map[string]string{
+                        "post.logout.redirect.uris": "+",
+                    },
+                    WebOrigins: &[]string{
+                        "+",
                     },
                 },
             ),
