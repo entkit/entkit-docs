@@ -1,6 +1,7 @@
 {
-  "label": "Entity Annotations",
+  "label": "Entity Based Annotations",
   "position": 2,
+  "collapsed": false,
   "link": {
     "type": "generated-index",
     "description": "entkit entity annotations"

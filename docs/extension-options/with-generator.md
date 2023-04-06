@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# With Generator
+# Generators Config
 
 This annotation aims to delineate supplementary UI generators
 

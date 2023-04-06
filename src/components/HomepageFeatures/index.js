@@ -4,32 +4,30 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
+    title: 'Generate UI based on backend',
     Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
-        Docusaurus was designed from the ground up to be easily installed and
-        used to get your website up and running quickly.
+        Entkit lets you simplify the process of generating CRUDs from Ent definitions with customizable views, fields, actions and search features.
       </>
     ),
   },
   {
-    title: 'Focus on What Matters',
+    title: 'Strong Auth Security',
     Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
     description: (
       <>
-        Docusaurus lets you focus on your docs, and we&apos;ll do the chores. Go
-        ahead and move your docs into the <code>docs</code> directory.
+          Entkit offers robust authentication for Entgo-generated GraphQL and OpenAPI APIs.
+          That provides powerful platform for your API and generated Frontend APP using the most popular providers in the industry.
       </>
     ),
   },
   {
-    title: 'Powered by React',
+    title: 'Powered by Go and React',
     Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
-        Extend or customize your website layout by reusing React. Docusaurus can
-        be extended while reusing the same header and footer.
+        Extend or customize your website layout by reusing Entkit generated React application.
       </>
     ),
   },

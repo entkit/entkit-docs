@@ -2,7 +2,7 @@
 sidebar_position: 3
 ---
 
-# Ignore uncommitted changes
+# Commitment Config
 
 To bypass the **uncommitted changes warning** error message during generation, you can apply this specific annotation.
 

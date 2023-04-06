@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# With GraphQL URL
+# GraphQL Config
 
 Supply the endpoint for your GraphQL server.
 

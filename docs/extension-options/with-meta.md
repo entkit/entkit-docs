@@ -2,7 +2,7 @@
 sidebar_position: 4
 ---
 
-# With Meta
+# Metadata Config
 
 To provide metadata variables to the adapters:
 
