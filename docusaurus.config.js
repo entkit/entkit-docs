@@ -134,12 +134,12 @@ const config = {
       },
       algolia: {
         // The application ID provided by Algolia
-        appId: 'QTLOXHXTI5',
+        appId: 'YOF4O43CC0',
 
         // Public API key: it is safe to commit it
-        apiKey: 'f621c5bc34adae4dee4f97d8536c31e5',
+        apiKey: '15c1deea7554340639cabf76920df080',
 
-        indexName: 'entkit_docs',
+        indexName: 'entkit',
 
         // Optional: see doc section below
         contextualSearch: true,
