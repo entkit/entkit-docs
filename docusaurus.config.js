@@ -6,20 +6,20 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Entkit Documentation',
+  title: 'EntKit Documentation',
   tagline: 'generate your dream',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://entkitv.com',
+  url: 'https://entkit.com',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'entkit', // Usually your GitHub org/user name.
-  projectName: 'entkit', // Usually your repo name.
+  organizationName: 'EntKit', // Usually your GitHub org/user name.
+  projectName: 'EntKit', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
