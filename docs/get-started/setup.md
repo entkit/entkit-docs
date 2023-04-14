@@ -29,10 +29,16 @@ sidebar_position: 2
 3. Configure `entkit` extension
     ```go title="entc.go"
     entkitEx, err := entkit.NewExtension(
-        entkit.WithUIs(
-            entkit.NewUI(filepath.Join("..", "typescript-project"), entkit.TypescriptAdapter), 
-            entkit.NewUI(filepath.Join("..", "refine-project"), entkit.RefineAdapter), 
-        ), 
+		// First UI app
+        entkit.WithGenerator("refine-project", entkit.DefaultRefineAdapter),
+        // Second UI app
+        entkit.WithGenerator(
+			"other-refine-project",
+			entkit.DefaultRefineAdapter,
+			entkit.TargetPath(filepath.Join("other-refine-project-root/project")),
+		),
+        // The server app has a CLI interface that allows you to run your UIs with a single command.
+        entkit.WithGenerator("my-awesome-server", entkit.DefaultServerAdapter),
         entkit.WithGraphqlURL("http://localhost/query"),
     )
    
@@ -109,6 +115,14 @@ sidebar_position: 2
     go generate
     ```
 
+
+:::info
+
+Check out the example repository to see how the extension is used, along with a live demo showcasing its capabilities.
+
+https://github.com/entkit/entkit-demo
+
+:::
 
 :::info
 
