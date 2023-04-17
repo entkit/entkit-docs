@@ -22,13 +22,7 @@ Entkit offers robust authentication for Entgo-generated GraphQL and OpenAPI APIs
    ```go title="ent.resolvers.go"
    // Companies is the resolver for the companies field.
    func (r *queryResolver) Companies(ctx context.Context, after *ent.Cursor, first *int, before *ent.Cursor, last *int, orderBy *ent.CompanyOrder, where *ent.CompanyWhereInput, q *string) (*ent.CompanyConnection, error) {
-       // Default Action Scopes
-       // ActionReadScope     = "Read"
-       // ActionCreateScope   = "Create"
-       // ActionUpdateScope   = "Update"
-       // ActionDeleteScope   = "Delete"
-       // You can also provide your custom actions scopes too
-       err := ent.EntkitAuthorizeByResource(ctx, "Company", entkit.ActionReadScope)
+       err := ent.EntkitAuthorizeByResource(ctx, ent.EntCompanyResource, ent.EntReadScope)
        if err != nil {
            return nil, err
        }
@@ -42,7 +36,7 @@ Entkit offers robust authentication for Entgo-generated GraphQL and OpenAPI APIs
    ```go title="mutations.resolvers.go"
    // CreateCompany is the resolver for the createCompany field.
    func (r *mutationResolver) CreateCompany(ctx context.Context, input ent.CreateCompanyInput) (*ent.Company, error) {
-       err := ent.EntkitAuthorizeByResource(ctx, "Company", entkit.ActionCreateScope)
+       err := ent.EntkitAuthorizeByResource(ctx, ent.EntCompanyResource, ent.EntCreateScope)
        if err != nil {
            return nil, err
        }

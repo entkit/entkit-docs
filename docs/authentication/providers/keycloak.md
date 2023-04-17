@@ -14,38 +14,34 @@ Keycloak is an open source Identity and Access Management tool with features suc
 
 ## Keycloak usage example
 
-```go title="entc.go" {3-31}
+```go title="entc.go" {3-27}
 entkit, err := entkit.NewExtension(
     entkit.WithAuth(
         entkit.AuthWithKeycloak(
-            entkit.NewKeycloak(
-                "http://localhost:8080", // Keycloak URL
-                "entkit", // Realm name
-                "admin", // Master admin username
-                "admin", // Master admin password
-                "entadmin", // Generated realm admin username
-                "entadmin", // Generated realm admin password
-                &gocloak.Client{
-                    ClientID: gocloak.StringP("my-backend-client"),
-                    Secret:   gocloak.StringP("my-backend-client-secret"),
+            entkit.KeycloakHost("http://localhost:8080"),
+            entkit.KeycloakRealm("entkit-demo-3"),
+            entkit.KeycloakMasterAdminCredentials("admin", "admin"),
+            entkit.KeycloakGeneratedAdminCredentials("entadmin", "entadmin"),
+            entkit.KeycloakFrontendClientConfig(gocloak.Client{
+                ClientID: gocloak.StringP("frontend"),
+                RootURL:  gocloak.StringP("https://demo.entkit.com"),
+                RedirectURIs: &[]string{
+                    "https://demo.entkit.com/*",
+                    "http://localhost:3000/*",
+                    "http://localhost/*",
                 },
-                &gocloak.Client{
-                    ClientID: gocloak.StringP("my-frontend-client"),
-                    RootURL:  gocloak.StringP("https://my-site.com"),
-                    RedirectURIs: &[]string{
-                        "https://my-site.com/*",
-                        "http://localhost:3000/*",
-						"http://localhost"
-                    },
-                    Attributes: &map[string]string{
-                        "post.logout.redirect.uris": "+",
-                    },
-                    WebOrigins: &[]string{
-                        "+",
-                    },
+                Attributes: &map[string]string{
+                    "post.logout.redirect.uris": "+",
                 },
-            ),
+                WebOrigins: &[]string{
+                    "+",
+                },
+            }),
+            entkit.KeycloakBackendClientConfig(gocloak.Client{
+                ClientID: gocloak.StringP("backend"),
+                Secret:   gocloak.StringP("test-secret"),
+            }),
         ),
-	),
+    ),
 )
 ```
