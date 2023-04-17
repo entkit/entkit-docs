@@ -77,7 +77,7 @@ const config = {
           {
             href: 'https://github.com/entkit/entkit',
             label: 'GitHub',
-            position: 'right',
+            position: 'left',
           },
         ],
       },
@@ -98,15 +98,7 @@ const config = {
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/entkit',
               },
             ],
           },
@@ -115,12 +107,12 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                href: 'https://github.com/entkit/entkit',
               },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Entkit, Inc.`,
+        copyright: `Copyright © ${new Date().getFullYear()} EntKit, Inc.`,
       },
       prism: {
         theme: require('prism-react-renderer/themes/dracula'),

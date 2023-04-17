@@ -23,7 +23,7 @@ Bundle of tools to generate backend and frontend together by your business defin
 
 ### Authentication and authorization
 
-Entkit is providing authentication and authorization for your `entgo` API endpoints/queries/mutations resolvers
+EntKit is providing authentication and authorization for your `entgo` API endpoints/queries/mutations resolvers
 
 #### Supporting generated APIs
    - GraphQL (supporting)
@@ -38,3 +38,9 @@ Entkit is providing authentication and authorization for your `entgo` API endpoi
    - By CRUD actions
    - By Custom actions
 
+### [Server generation engine](/docs/generators/server-generator)
+   - Serve generated apps (dev/prod)
+   - Provide dynamic env variables to UI apps
+   - Single binary artifact
+   - Generate Docker image of your apps
+   - Push Docker image to registry
