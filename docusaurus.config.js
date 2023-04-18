@@ -75,6 +75,11 @@ const config = {
             label: 'Tutorial',
           },
           {
+            href: 'https://pkg.go.dev/github.com/entkit/entkit/v2',
+            label: 'GoDoc',
+            position: 'left',
+          },
+          {
             href: 'https://github.com/entkit/entkit',
             label: 'GitHub',
             position: 'left',
