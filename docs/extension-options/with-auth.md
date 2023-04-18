@@ -13,7 +13,7 @@ As of now, only the Keycloak provider is available for use.
 :::
 
 
-Available options [check here](/docs/authentication/introduction) 
+Available options [check here](/docs/authentication/setup) 
 
 ## Example
 ```go title="entc.go"
