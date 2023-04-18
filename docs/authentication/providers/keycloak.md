@@ -10,7 +10,7 @@ Keycloak is an open source Identity and Access Management tool with features suc
 
 ## How `entkit` integrating Keycloak
 
-`entkit` generates both backend and frontend clients, complete with authorization resources, permissions, policies, and roles, streamlining user management. To enforce backend security, Entkit utilizes resource and scope verification.
+`entkit` generates both backend and frontend clients, complete with authorization resources, permissions, policies, and roles, streamlining user management. To enforce backend security, EntKit utilizes resource and scope verification.
 
 ## Keycloak usage example
 

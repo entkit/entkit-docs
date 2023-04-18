@@ -1,6 +1,10 @@
-# Authentication
+---
+sidebar_position: 1
+---
 
-Entkit offers robust authentication for Entgo-generated GraphQL and OpenAPI APIs. By generating authorization resources, permissions, policies, and roles, Entkit creates a powerful authentication and authorization platform for your API using the most popular providers in the industry.
+# Authentication Setup
+
+EntKit offers robust authentication for Entgo-generated GraphQL and OpenAPI APIs. By generating authorization resources, permissions, policies, and roles, EntKit creates a powerful authentication and authorization platform for your API using the most popular providers in the industry.
 
 ## Supporting providers
 1. [Keycloak](/docs/authentication/providers/keycloak)
@@ -17,7 +21,7 @@ Entkit offers robust authentication for Entgo-generated GraphQL and OpenAPI APIs
     )
     ```
 2. Run `go generate` to generate required resources
-3. Setup [Entkit Authentication middleware](/docs/authentication/middleware)
+3. Setup [EntKit Authentication middleware](/docs/authentication/middleware)
 4. Configure your resolver resources and scopes enforcements
    ```go title="ent.resolvers.go"
    // Companies is the resolver for the companies field.
@@ -56,7 +60,7 @@ To test your configuration, authorize your requests using the Bearer token suppl
 
 :::caution
 
-Entkit generates a default user within your chosen authentication provider.
+EntKit generates a default user within your chosen authentication provider.
 
 Default admin credentials:
 

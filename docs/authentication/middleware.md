@@ -1,5 +1,5 @@
 ---
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 # Authentication Middleware
@@ -50,7 +50,7 @@ func main() {
 	http.Handle("/",
 		playground.Handler("Todo", "/query"),
 	)
-	http.Handle("/query", ent.EntkitAuthMiddleware(srv))
+	http.Handle("/query", ent.EntAuthMiddleware(srv))
 	log.Println("listening on :8081")
 	if err := http.ListenAndServe(":8081", nil); err != nil {
 		log.Fatal("http server terminated", err)
