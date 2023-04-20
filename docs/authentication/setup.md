@@ -12,45 +12,53 @@ EntKit offers robust authentication for Entgo-generated GraphQL and OpenAPI APIs
 
 ## Configuration
 
-1. Initially, you need to configure your extension.
-    ```go title="entc.go"
-    entkit, err := entkit.NewExtension(
-        entkit.WithAuth(
-            entkit.AuthWithKeycloak( ... ) // Check your preferred provider configuration
-        )
-    )
-    ```
-2. Run `go generate` to generate required resources
-3. Setup [EntKit Authentication middleware](/docs/authentication/middleware)
-4. Configure your resolver resources and scopes enforcements
-   ```go title="ent.resolvers.go"
-   // Companies is the resolver for the companies field.
-   func (r *queryResolver) Companies(ctx context.Context, after *ent.Cursor, first *int, before *ent.Cursor, last *int, orderBy *ent.CompanyOrder, where *ent.CompanyWhereInput, q *string) (*ent.CompanyConnection, error) {
-       err := ent.EntkitAuthorizeByResource(ctx, ent.EntCompanyResource, ent.EntReadScope)
-       if err != nil {
-           return nil, err
-       }
-       return r.client.Company.Query().
-           Paginate(ctx, after, first, before, last,
-               ent.WithCompanyOrder(orderBy),
-               ent.WithCompanyFilter(where.ApplySearchQuery(q).Filter),
-           )
-   }
-   ```
-   ```go title="mutations.resolvers.go"
-   // CreateCompany is the resolver for the createCompany field.
-   func (r *mutationResolver) CreateCompany(ctx context.Context, input ent.CreateCompanyInput) (*ent.Company, error) {
-       err := ent.EntkitAuthorizeByResource(ctx, ent.EntCompanyResource, ent.EntCreateScope)
-       if err != nil {
-           return nil, err
-       }
-       return ent.FromContext(ctx).Company.
-           Create().
-           SetInput(input).
-           Save(ctx)
-   }
-   ```
-5. Run your API server
+### 1. Initially, you need to configure your extension.
+
+```go title="entc.go"
+entkit, err := entkit.NewExtension(
+  entkit.WithAuth(
+      entkit.AuthWithKeycloak( ... ) // Check your preferred provider configuration
+  )
+)
+```
+
+### 2. Run `go generate` to generate required resources
+
+### 3. Setup [EntKit Authentication middleware](/docs/authentication/middleware)
+
+### 4. Configure your resolver resources and scopes enforcements
+
+:::info
+
+EntKit generates enforcement functions for every entity action individually.
+
+e.g. for `Company` entity `Read` action you must use `ent.EntEnforceCompanyRead`
+
+pattern of enforcement function is `ent.{Prefix}Enforce{Resource}{Scope}(ctx)`
+
+:::
+
+```go title="ent.resolvers.go"
+// Companies is the resolver for the companies field.
+func (r *queryResolver) Companies(ctx context.Context, after *ent.Cursor, first *int, before *ent.Cursor, last *int, orderBy *ent.CompanyOrder, where *ent.CompanyWhereInput, q *string) (*ent.CompanyConnection, error) {
+    err := ent.EntEnforceCompanyRead(ctx)
+    if err != nil {
+        return nil, err
+    }
+    return r.client.Company.Query().Paginate(ctx, after, first, before, last, ent.WithCompanyOrder(orderBy), ent.WithCompanyFilter(where.ApplySearchQuery(q).Filter))
+}
+```
+
+```go title="mutations.resolvers.go"
+// CreateCompany is the resolver for the createCompany field.
+func (r *mutationResolver) CreateCompany(ctx context.Context, input ent.CreateCompanyInput) (*ent.Company, error) {
+    err := ent.EntEnforceCompanyCreate(ctx)
+    if err != nil {
+        return nil, err
+    }
+    return ent.FromContext(ctx).Company.Create().SetInput(input).Save(ctx)
+}
+```
 
 :::info
 

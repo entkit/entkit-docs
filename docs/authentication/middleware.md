@@ -59,4 +59,4 @@ func main() {
 ```
 ### Gin middleware
 
-Ref: `ent.EntkitGinAuthMiddleware`
+Ref: `ent.EntGinAuthMiddleware`

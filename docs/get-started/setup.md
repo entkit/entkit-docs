@@ -4,7 +4,6 @@ sidebar_position: 2
 
 # Setup guide
 
-
 ## 1. Add imports to your `entc.go` file
 ```diff title="entc.go"
 package main
@@ -129,7 +128,7 @@ go generate
 
 ## 6. Run server CLI
 
-```shell title="Run helpp command"
+```shell title="Run help command"
 go run ./my-awesome-server/*.go help
 ```
 
