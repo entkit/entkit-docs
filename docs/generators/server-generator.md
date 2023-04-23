@@ -14,7 +14,7 @@ For production configurations, you can provide them directly as command argument
 
 Add server generator on your extension configuration by `entkit.WithGenerator` option. 
 
-```go title="entc.go" {8}
+```go title="entc.go" {9}
 ...
 entkitEx, err := entkit.NewExtension(
     entkit.WithGenerator("refine-project", entkit.DefaultRefineAdapter),
